@@ -18,8 +18,10 @@ const userDetails = {
         const result = await User.save( userDetails ); 
         res.status( 201 ).json( {message:"New User Registered"} )
         if ( !err.statusCode ) { 
+            error.statusCode = 500; 
 
         }
+        next(err)
 
     } catch ( err ) { 
 
