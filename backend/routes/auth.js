@@ -5,7 +5,7 @@ const router = express.Router();
 const User = require('../model/user');
 const authController = require('../controllers/auth');
 const errorController = require( "../controllers/error" );
-// end of 
+// end 
 
 
 
