@@ -6,12 +6,11 @@ import { PostsComponent } from './components/posts/posts.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-
   { path: "", component: HomeComponent },
   { path: "posts", component: PostsComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent},
-    {path:"**", redirectTo:""},
+  {path:"**", redirectTo:""},
 ];
 
 @NgModule({
