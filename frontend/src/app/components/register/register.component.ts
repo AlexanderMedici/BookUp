@@ -7,9 +7,11 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  // added the ! operator to fix an error test to make sure it works
   registerForm!: FormGroup;
 
   constructor() { 
+  
 
   }
   ngOnInit(): void {
