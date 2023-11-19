@@ -9,7 +9,7 @@ const User = require('../model/user');
 const authController = require('../controllers/auth');
 
 router.post(
-  '/signup',
+  '/register',
   [
     body('name').trim().not().isEmpty(),
     body('email')
@@ -24,7 +24,7 @@ router.post(
       .normalizeEmail(),
     body('password').trim().isLength({ min: 7 }),
   ],
-  authController.signup
+  authController.register
 );
 
 // router.post('/login', authController.login);
