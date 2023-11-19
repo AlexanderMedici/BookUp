@@ -34,7 +34,8 @@ import { CommonModule } from '@angular/common';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    PostsComponent, 
+    PostsComponent,
+    
   ],
   imports: [
     BrowserModule,

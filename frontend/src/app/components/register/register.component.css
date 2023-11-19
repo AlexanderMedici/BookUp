@@ -25,7 +25,7 @@ img {
   text-align: center;
 }
 
-input {
+input, label {
   border-radius: 100px;
   padding: 10px 15px;
   width: 50%;

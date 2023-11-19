@@ -1,13 +1,12 @@
-// requiring in all needed files
-const express = require( 'express' );
+const express = require('express');
+
 const { body } = require('express-validator');
+
 const router = express.Router();
+
 const User = require('../model/user');
+
 const authController = require('../controllers/auth');
-const errorController = require( "../controllers/error" );
-// end 
-
-
 
 router.post(
   '/signup',
@@ -27,8 +26,8 @@ router.post(
   ],
   authController.signup
 );
-module.exports = { signup: ['.post', '/signup'] };
 
-//  router.post('/login', authController.login);
+// router.post('/login', authController.login);
 
 module.exports = router;
+
