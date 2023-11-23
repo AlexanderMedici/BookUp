@@ -10,7 +10,7 @@ import { ErrorHandlerService } from './error-handler.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = "http://localhost:3000/auth"; 
+  private url = "http://localhost:3000/auth/register"; 
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }), 
   }
@@ -21,7 +21,7 @@ export class AuthService {
    
   ) { };
   register(user: Omit<User, "id">): Observable<User> { 
-    return this.http.post<User>(`{this.url}/register`,user,  this.httpOptions).pipe(
+    return this.http.post<User>(this.url,user,  this.httpOptions).pipe(
       first(), 
       catchError(this.ErrorHandlerService.handleError<User>("register"))
     ) 

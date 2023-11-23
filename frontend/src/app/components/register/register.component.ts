@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
+import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,10 +12,7 @@ export class RegisterComponent implements OnInit {
   // added the ! operator to fix an error test to make sure it works
   registerForm!: FormGroup;
 
-  constructor() { 
-  
-
-  }
+  constructor(private authService: AuthService) {}
   ngOnInit(): void {
 
      this.registerForm = this.createFormGroup();
@@ -27,6 +26,7 @@ export class RegisterComponent implements OnInit {
     })
   }
   register(): void {
-    console.log(this.registerForm.value)
+    //console.log(this.registerForm.value)
+    this.authService.register(this.registerForm.value).subscribe((msg)=> console.log(msg));
   }
 }
