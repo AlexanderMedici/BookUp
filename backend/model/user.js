@@ -15,5 +15,16 @@ module.exports = class User {
             'INSERT INTO users(name, email, password) VALUES(?, ?, ?)', [user.name, user.email, user.password]
         )
     }
+      static find ( email ) { 
+        return db.execute(
+            'SELECT * FROM users WHERE email = ?', [email]
+        ); 
+    }
+    static deleteEmail ( email ) {
+        return db.execute(
+            'DELETE FROM users WHERE email = ?', [email]
+        );
+    }
 }; 
+
 
