@@ -40,7 +40,7 @@ exports.login = async ( req, res, next ) => {
   try {
     const user = await User.find( email );
 
-    if ( user[0] !== 1 ) {
+    if ( user[0] == null ) {
       const error = new Error( 'Invalid credentials Email not Registered' );
       error.statusCode = 401;
       throw error;

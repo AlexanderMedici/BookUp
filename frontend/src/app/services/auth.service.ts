@@ -48,7 +48,7 @@ export class AuthService {
      /*return this.http.post(`${this.url}/login`, { email, password }, this.httpOptions)
        .pipe(
          first(),  
-        tap((tokenObject: '{ token: string; userId: Pick<User, "id">; }': token, userId) =>{
+        tap((tokenObject: '{ token: string; userId: Pick<User, "id">; }) =>{
           this.userId = tokenObject.userId;
           localStorage.setItem("token", tokenObject.token);
           this.isUserLoggedIn$.next(true);
@@ -62,7 +62,7 @@ export class AuthService {
   .pipe(
     first(),
     tap((tokenObject) => {
-      this.userId = tokenObject.userId;
+      this.userId = tokenObject.userId; 
       localStorage.setItem("token", tokenObject.token);
       this.isUserLoggedIn$.next(true);
       this.router.navigate(["posts"]);
