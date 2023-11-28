@@ -6,6 +6,7 @@ const ports = process.env.PORT || 3000;
 // routes and error handlers  
 const errorController = require( "./controllers/error" ); 
 const authRoutes = require( "./routes/auth" );
+const postsRoutes = require( "./routes/posts");
 
 app.use( bodyParser.json() );
 app.use( cors())
@@ -17,7 +18,7 @@ app.use( ( req, res, next ) => {
 })
 app.use('/auth', authRoutes);
 
-// app.use('/post', postsRoutes);
+app.use('/posts', postsRoutes);
 
 app.use(errorController.get404);
 
