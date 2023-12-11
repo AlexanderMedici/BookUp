@@ -24,6 +24,7 @@ import { PostsComponent } from './components/posts/posts.component';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { CommonModule } from '@angular/common';
+import { CreateBookingComponent } from './components/create-booking/create-booking.component';
 
 
 
@@ -35,6 +36,7 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     HomeComponent,
     PostsComponent,
+    CreateBookingComponent,
     
   ],
   imports: [

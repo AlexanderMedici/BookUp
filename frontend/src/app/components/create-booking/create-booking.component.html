@@ -1,0 +1,43 @@
+<!-- <div class="event_item">
+  <button mat-icon-button>
+    <mat-icon color="warn">delete</mat-icon>
+  </button>
+  <div class="ei_Dot"></div>
+  <div class="ei_Title">12:00 pm</div>
+  <div class="ei_Copy">Lunch for with the besties</div>
+</div> -->
+
+<form
+  class="event_item"
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit(form.value)"
+  novalidate
+>
+  <button
+    [disabled]="!form.valid"
+    class="cl_add"
+    mat-raised-button
+    color="accent"
+  >
+    <mat-icon class="fas fa-plus">+</mat-icon>
+  </button>
+  <mat-form-field class="ei_Title">
+    <mat-label class="ei_Title">Post Title</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+
+  <mat-form-field class="ei_Title">
+    <mat-label class="ei_Title">Post body</mat-label>
+    <input class="ei_Copy" matInput formControlName="body" />
+  </mat-form-field>
+  <!-- <button
+    color="accent"
+    [disabled]="!form.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <mat-icon>add</mat-icon>
+    <span>Post</span>
+  </button> -->
+</form>
