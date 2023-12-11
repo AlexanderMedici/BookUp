@@ -67,6 +67,7 @@ export class AuthService {
       this.isUserLoggedIn$.next(true);
       this.router.navigate(["posts"]);
     }),
+    //passes a token that is a string with a userId from the user model
     catchError(this.ErrorHandlerService.handleError<{ token: string; userId: Pick<User, 'id'> }>("login"))
   );
 
