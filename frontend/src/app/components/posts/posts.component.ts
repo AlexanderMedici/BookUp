@@ -26,10 +26,10 @@ export class PostsComponent implements OnInit {
 
   }
   createPost():void { 
-this.posts$! = this.fetchAll();
+this.posts$ = this.fetchAll();
   }
   delete(postId: Pick<Post, "id">): void{
-    this.postService.deletePost(postId);
+    this.postService.deletePost(postId).subscribe(() => (this.posts$ = this.fetchAll()));
 
   }
 }

@@ -27,14 +27,24 @@
       <div class="cl_plan">
         <div class="cl_title">Today</div>
         <div class="cl_copy">22nd April 2018</div>
-        <div class="cl_add">
-          <i class="fas fa-plus">+</i>
-        </div>
       </div>
     </div>
     <div class="calendar_events">
       <p class="ce_title">Upcoming Events</p>
-      <div class="event_item"></div>
+      <mat-card *ngFor="let posts$ of posts$ | async">
+        <button mat-icon-button>
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+        <div class="post-title">
+          {{ posts$.title }}
+        </div>
+        <div class="post-meta">
+          {{ posts$.created }}
+        </div>
+        <div class="post-body">
+          {{ posts$.body }}
+        </div>
+      </mat-card>
     </div>
   </div>
 </div>
